@@ -14,34 +14,38 @@ using System.Threading.Tasks;
 //CSD3354 SECTION2
 //ASSIGNMENT 2
 //MARCH 6, 2019
-namespace DelegatesAndEvents
+namespace ConsoleApp1
 {
-    public class Program
+    class program
     {
-        public static void Main()
+        static void Main(string[] args)
         {
             DelegateExercises newDel = new DelegateExercises();
             newDel.Method3();
             Console.ReadLine();
         }
     }
+
+
     public class DelegateExercises
     {
+
         public delegate int MyDelegate(int intValue);
 
         int Method1(int intMethod1)
         {
-            return intMethod1*2;
+            return intMethod1 * 4;
         }
-
         int Method2(int intMethod1)
         {
-            return intMethod1 * 10;
+            return intMethod1 * 20;
         }
         public void Method4(MyDelegate myDelegate)
         {
-            int result = myDelegate(10);
-            Console.WriteLine(result);
+            for (int i = 1; i <= 5; i++)
+            {
+                System.Console.Write(myDelegate(i) + " ");
+            }
         }
         public void Method3()
         {
@@ -50,5 +54,6 @@ namespace DelegatesAndEvents
             myDelegate = new MyDelegate(Method2);
             Method4(myDelegate);
         }
+
     }
 }
