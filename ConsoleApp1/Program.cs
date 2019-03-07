@@ -16,20 +16,11 @@ using System.Threading.Tasks;
 //MARCH 6, 2019
 namespace DelegatesAndEvents
 {
-    class Program
-    {
-        static void Main(string[]args)
-        {
-            DelegateExercises newDel = new DelegateExercises();
-            newDel.Method2();
-            Console.ReadLine();
-        }
-    }
     public class DelegateExercises
     {
         public delegate void MyDelegate();
 
-        void Method1()
+        void Method1(int i)
         {
             Console.WriteLine("Method1");
             Console.ReadLine();
