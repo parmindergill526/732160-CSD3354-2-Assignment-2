@@ -14,15 +14,14 @@ using System.Threading.Tasks;
 //CSD3354 SECTION2
 //ASSIGNMENT 2
 //MARCH 6, 2019
-namespace DelegateAndEvents
+namespace DelegatesAndEvents
 {
     class program
     {
         public static void Main()
         {
-
-            DelegateExercises newDel = new DelegateExercises();
-            newDel.Method3();
+            DelegateExercises delegateExercises = new DelegateExercises();
+            delegateExercises.Method3();
             Console.ReadLine();
         }
     }
@@ -31,7 +30,7 @@ namespace DelegateAndEvents
     {
         int Method1(out int i)
         {
-            System.Console.WriteLine("Method1");
+            System.Console.WriteLine("Method1" + i);
             i = 10;
             return 0;
         }
@@ -39,9 +38,10 @@ namespace DelegateAndEvents
     public void Method3()
     {
         MyDelegate myDelegate = new MyDelegate(Method1);
-        MyDelegate myDelegate1 = new MyDelegate(Method1);
+        MyDelegate myDelegate1 = null;
         MyDelegate myDelegate2 = myDelegate + myDelegate1;
         int intValue;
         myDelegate2(out intValue);
     }
+
 }
